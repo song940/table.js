@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Grid</title>
+<style></style>
+<script src='http://zeptojs.com/zepto.js'></script>
+<script src='js/grid.js'></script>
+<script>
+$(function($){
+  var container = document.getElementById('container')
+  var grid = new Grid({
+    el: container,
+    colums: {
+      username: {
+        label: 'Name',
+        render: function(val){
+          var btn = document.createElement('button');
+          btn.innerText = val;
+          return btn;
+        }
+      }
+    },
+    data: [
+      { username: 'lsong' }
+    ]
+  });
+
+  grid.render();
+});
+</script>
+</head>
+<body>
+  <div id='container' ></div>
+</body>
+</html>
