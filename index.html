@@ -2,34 +2,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Grid</title>
-<style></style>
-<script src='http://zeptojs.com/zepto.js'></script>
+<style>
+.table{
+  width: 50%;
+}
+td, tr, th{
+  border: 1px solid #ccc;
+}
+</style>
+<script type="text/javascript" src='http://zeptojs.com/zepto.min.js'></script>
 <script src='js/grid.js'></script>
+<script src='js/datagrid.js'></script>
+</head>
+<body></body>
 <script>
-$(function($){
-  var container = document.getElementById('container')
-  var grid = new Grid({
-    el: container,
-    colums: {
-      username: {
-        label: 'Name',
-        render: function(val){
-          var btn = document.createElement('button');
-          btn.innerText = val;
-          return btn;
+;(function($){
+  var dataGrid =  new DataGrid({
+    colums: [
+      { name: 'key', label: '键' },
+      { name: 'value', label: '值' }
+    ],
+    api: {
+      get: {
+        method: 'get',
+        url: 'http://api.lsong.org/translate?text=otherwise',
+        process: function(data){
+          return data.web;
+        }
+      },
+      put: {
+
+      },
+      del: {
+        method: 'delete',
+        url: '/del',
+        process: function(model){
+          return model.id;
         }
       }
-    },
-    data: [
-      { username: 'lsong' }
-    ]
+    }
   });
 
-  grid.render();
-});
+})();
 </script>
-</head>
-<body>
-  <div id='container' ></div>
-</body>
 </html>
