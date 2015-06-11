@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Table.js Example</title>
+</head>
+<style>
+table{
+  width: 50%;
+}
+table, tr, td{
+  border: 1px solid #ccc;
+}
+</style>
+<body>
+  <div id="container" ></div>
+</body>
+<script src="../build/table.min.js" ></script>
+<script type="text/javascript">
+  var container = document.getElementById('container');
+
+  var table = new Table({
+    el: container,
+    columns: [
+      { name: 'username', label: '姓名', render: 'text'  , default: 'no name' },
+      { name: 'age'     , label: '年龄', render: 'button', default: 'unknow'  },
+      {                   label: '编辑', render: 'button', default: '编辑'     }
+    ]
+  });
+
+  table.render([
+    { username: 'aa', age: 11 },
+    { username: 'bb', age: 12 },
+    { /*username: 'cc',*/ age: 13 },
+    { username: 'dd' /*, age: 14*/ }
+  ]);
+</script>
+</html>

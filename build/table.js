@@ -66,18 +66,18 @@ Table.prototype.initTable = function () {
  * @return {[type]} [description]
  */
 Table.prototype.renderHeader = function () {
-  var colums = this.options.colums;
-  if(!colums && this.data.length > 0){
-    colums = [];
+  var columns = this.options.columns;
+  if(!columns && this.data.length > 0){
+    columns = [];
     var model = this.data[ 0 ]; //1st.
     for(var key in model){
-      colums.push({ name: key });
+      columns.push({ name: key });
     }
-    this.options.colums = colums;
+    this.options.columns = columns;
   }
   var tr = document.createElement('tr');
-  for(var index in colums){
-    var field = colums[ index ];
+  for(var index in columns){
+    var field = columns[ index ];
     var th = document.createElement('th');
     th.innerText = field.label || field.name;
     tr.appendChild(th);
@@ -91,9 +91,11 @@ Table.prototype.renderHeader = function () {
  * @return {[type]}       [description]
  */
 Table.prototype.renderColumns = function (rowEl, model) {
-  var colums = this.options.colums;
-  for(var index in colums){
-    var config = colums[index];
+  var columns = this.options.columns;
+  console.log(this.options);
+
+  for(var index in columns){
+    var config = columns[index];
     var val = model[ config.name ];
     var render = config.render;
     if(typeof render == 'string'){
