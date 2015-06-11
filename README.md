@@ -1,6 +1,6 @@
 ## table.js
 
-just a table , node dependencies !
+just a table , no dependencies !
 
 
 + ~150 lines.
