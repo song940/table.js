@@ -1,0 +1,30 @@
+{
+  "name": "table.js",
+  "version": "1.0.0",
+  "description": "just a table .",
+  "main": "index.js",
+  "scripts": {
+    "test": "test/test.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/song940/table.js.git"
+  },
+  "keywords": [
+    "table",
+    "grid"
+  ],
+  "author": "lsong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/song940/table.js/issues"
+  },
+  "homepage": "https://github.com/song940/table.js#readme",
+  "devDependencies": {
+    "coffee-script": "^1.9.3",
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-umd": "^0.2.0"
+  }
+}

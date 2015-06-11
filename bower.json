@@ -1,0 +1,27 @@
+{
+  "name": "table.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/song940/table.js.git",
+  "authors": [
+    "Lsong <song940@gmail.com>"
+  ],
+  "description": "just a table , node dependencies !",
+  "main": "src/table.js",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals"
+  ],
+  "keywords": [
+    "table",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
