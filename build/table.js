@@ -111,6 +111,7 @@ Table.prototype.renderColumns = function (rowEl, model) {
     }
     var td = document.createElement('td');
     td.data = val;
+    td.className = config.className || '';
     td.appendChild(render(val || config.default || ''));
     this.options.columRender && this.options.columRender(td);
     rowEl.appendChild(td);
