@@ -83,7 +83,6 @@ Table.prototype.renderHeader = function () {
  */
 Table.prototype.renderColumns = function (rowEl, model) {
   var columns = this.options.columns;
-  console.log(this.options);
 
   for(var index in columns){
     var config = columns[index];
@@ -103,7 +102,7 @@ Table.prototype.renderColumns = function (rowEl, model) {
     var td = document.createElement('td');
     td.data = val;
     td.className = config.className || '';
-    td.appendChild(render(val || config.default || ''));
+    td.appendChild(render.call(model, val || config.default || ''));
     this.options.columRender && this.options.columRender(td);
     rowEl.appendChild(td);
   }
@@ -144,9 +143,7 @@ Table.prototype.renderFooter = function () {
  * @return {[type]}      [description]
  */
 Table.prototype.render = function (data) {
-  if(data){
-    this.data = data;
-  }
+  if(data) this.data = data;
   this.clear();
   this.renderHeader();
   this.renderRows();
